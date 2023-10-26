@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        .dcontainer {
+            display: flex;
+            border: 1px solid #000000;
+            align-items: center;
+            padding : 20px;
+            margin-top: 20px
+        }
+
+        .dleft-column {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .dright-column {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .dimage {
+            max-width: 100%;
+            height: 500px;
+            margin-bottom: 10px;
+        }
+        
+        .dphome{
+            font-size: 25px
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FF7B34;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #000;
+        }
+
+        .dbottom-section {
+            border: 1px solid #000000;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dbottom-image {
+            padding: 10px;  
+            flex: 2;
+            max-width: calc(33.33% - 10px);
+            height: 250px;
+        }
+
+        .dbottom-text {
+            margin-top: 50px;
+            flex: 1;
+            margin-left: 10px;
+            padding: 10px;
+        }
+
+        .icon-link i {
+            color: black; /* Change icon color to black */
+            font-size: 25px;
+            padding:10px;
+            margin-left: 10px;
+        }
+
+        .icon-link{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dcontainer">
+        <div class="dleft-column">
+            <h1 style="color: #d17724; font-size: 50px; text-align: center; line-height: 0px;" id="HDR" ;>Where Beauty</h1>
+            <h1 style="color: #d17724; font-size: 100px; text-align: center; line-height: 120px;" id="HDR" ;>Meets</h1>
+            <h1 style="color: #d17724; font-size: 50px; text-align: center; line-height: 0px;" id="HDR" ;>Connection</h1>
+            <br>
+            <h4 style="font-weight: bolder; text-align: center; ">connecting mask products to you.</h4>
+            <div class="button-container">
+                <button class="button">Makeup</button>
+                <button class="button">Skincare</button>
+            </div>
+        </div>
+        <div class="dright-column">
+            <img class="dimage" src="~/images/dhome1.jpg" alt="Right Image">
+        </div>
+    </div>
+
+    <div class="dbottom-section">
+        <img class="dbottom-image" src="~/images/dhome2.jpg" alt="Bottom Image 1">
+        <img class="dbottom-image" src="~/images/dhome3.jpg" alt="Bottom Image 2">
+        <img class="dbottom-image" src="~/images/dhome4.jpg" alt="Bottom Image 3">
+        <div class="dbottom-text">
+            <h2 id="HDR">@@TheMaskOfficial</h2>
+            <p>Please click on the icons below to navigate to our official pages.</p>
+            <div class="dsocial-icons">
+                <a href="#" class="icon-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>
+</html>

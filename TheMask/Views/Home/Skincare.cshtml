@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .header {
+            margin-top: 20px;
+            font-family: Helvetica;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #E7DFD8;
+            color: #000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .filter-sort {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkboxes {
+            display: flex;
+            margin-right: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox {
+            margin-right: 5px;
+        }
+
+        .filter-button {
+            padding: 8px 15px;
+            background-color: #FF7B34;
+            border-color: #FF7B34;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .sort-select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .row {
+            border: 2px solid black;
+            padding: 25px;
+        }
+
+        .card {
+            border-color: #E7DFD8;
+        }
+
+        .card-img-top {
+            border-radius: 0.25rem;
+        }
+
+        .card-title {
+            font-size: 30px
+        }
+
+        .add-to-cart-button {
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #FF7B34;
+            border-color: #FF7B34;
+            color: whitesmoke;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #000;
+            border-color: #000;
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-color: #E7DFD8;">
+    <div class="container">
+
+        <div class="header">
+            <div class="logo" id="HDR" style="font-size: 50px; color:#d17724; font-weight: lighter;">TheMaskMakeup</div>
+            <div class="filter-sort">
+                <div class="checkboxes">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox">
+                        Budget
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox">
+                        Premium
+                    </label>
+                </div>
+                <button class="filter-button">Filter</button>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="latest">Latest</option>
+                        <option value="alphabetical">Alphabetical</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" style="background-color: #E7DFD8;">
+                            <img src="~/images/serum.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                    <h5 class="card-title" id="HDR" style="font-weight: lighter;">Mask Serum</h5>
+                                    <p class="card-text" style="font-weight: bold; text-align: justify;">
+                                        Experience a transformation in your skincare routine with our rejuvenating serum. Packed with potent
+                                        antioxidants and nourishing ingredients, this serum delivers deep hydration and targets fine lines and uneven texture.
+                                    </p>
+                                <button class="add-to-cart-button">Mask Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="background-color: #E7DFD8;">
+                            <img src="~/images/moisturizer.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                    <h5 class="card-title" id="HDR" style="font-weight: lighter;">Mask Moisturizer</h5>
+                                    <p class="card-text" style="font-weight: bold; text-align: justify;">
+                                        Indulge your skin in the ultimate hydration experience with our enriching moisturizer. Infused with a harmonious blend of nourishing oils and skin-loving vitamins,
+                                        this moisturizer revitalizes and restores your skin's natural radiance.
+                                    </p>
+                                <button class="add-to-cart-button">Mask Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="background-color: #E7DFD8;">
+                            <img src="~/images/sunscreen.jpg" class="card-img-top" alt="Product Image" style="width: 388.5px; height: 260px;">
+                            <div class="card-body">
+                                    <h5 class="card-title" id="HDR" style="font-weight: lighter;">Mask Powder Found</h5>
+                                    <p class="card-text" style="font-weight: bold; text-align: justify;">
+                                        Unveil a radiant complexion with our luxurious powder foundation. Providing coverage and a seamless finish, effortlessly blur our imperfections
+                                        while letting your skin breathe, leaving you with a flawless and natural-looking glow.
+                                    </p>
+                                <button class="add-to-cart-button">Mask Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br/>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        .login-container {
+            margin-top: 10px;
+            background-color: #E7DFD8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px dotted black;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #d000bf;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            background-color: #FF7B34;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-button {
+            background-image: linear-gradient(to right, #d02dbd28, #f319e1);
+            border-radius: 10px;
+        }
+
+        .sign-up-button {
+            background-image: linear-gradient(to right, #d02dbd28, #f319e1);
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+    <body style="background-color: #E7DFD8;">
+        <div class="login-container">
+            <h2>Embrace The Mask</h2>
+            <br>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <input type="email" placeholder="E-mail" required>
+                <div class="button-container">
+                    <button class="sign-up-button" type="submit"><b>Sign Up</b></button>
+                </div>
+            </form>
+        </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>
+</html>
