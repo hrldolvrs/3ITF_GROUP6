@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Contact
+<!DOCTYPE html>
 <html lang="en">
 <style>
 
@@ -21,7 +22,7 @@
         font-weight: bold;
     }
 
-    input[type=text], textarea {
+    input[type=text], textarea, #contactdate {
         width: 100%;
         padding: 12px;
         border: 1px solid black;
@@ -41,10 +42,10 @@
         cursor: pointer;
     }
 
-        /*when hover the button changes color*/
-        input[type=submit]:hover {
-            background-color: #000;
-        }
+    /*when hover the button changes color*/
+    input[type=submit]:hover {
+        background-color: #000;
+    }
 </style>
 
 <body style="background-color: #E7DFD8;">
@@ -52,33 +53,25 @@
         <h2 id="HDR" style="font-size: 50px; color:#d17724; font-weight: lighter; text-align: center;">Contact Us!</h2>
         <h4 id="HDR" style="font-weight: lighter; text-align: center;">Let us know what you think!</h4>
         <div class="container" id="CNCT">
-            <form action="">
+            <form asp-action = "Contact" asp-controller = "HomeController" method = "post">
 
-                <label for="fullname" id="contacttext">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+                <label asp-for = "FullName" id="contacttext">Full Name</label>
+                <input asp-for = "FullName" type="text" id="fullname" placeholder="Enter Your Full Name">
 
-                <label for="email" id="contacttext">Email</label>
-                <input type="text" id="email" name="email" placeholder="Email">
+                <label asp-for = "ContactEmail" id="contacttext">Email</label>
+                <input asp-for = "ContactEmail" type="text" id="email" placeholder="Enter Your Email">
 
-                <label for="message" id="contacttext">Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" style="height:200px"></textarea>
+                <label asp-for="ContactDate" id="contacttext">Date</label>
+                <input asp-for="ContactDate" id="contactdate"/>
+
+                <label asp-for = "ContactMessage" id="contacttext">Message</label>
+                <input asp-for = "ContactMessage" textarea placeholder="Enter Your Message" style="height:200px">
+
                 <input type="submit" value="Submit">
 
             </form>
         </div>
         <br /><br />
-        <!--newsletter-->
-        <h4 id="HDR" style="color:#d17724; font-size: 30px; font-weight: lighter; text-align: center;">Sign up for our newsletter!</h4>
-        <br />
-        <div class="container">
-            <form action="">
-
-                <label for="newsletteremail" id="contacttext">Email</label>
-                <input type="text" id="newsletteremail" name="newsletteremail" placeholder="Email">
-                <input type="submit" value="Submit">
-
-            </form>
-        </div>
     </div>
     <br />
     <br />

@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        .cart-page {
+            margin: 80px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .placeholder {
+            height: 100px;
+            width: 100px;
+            background-color: #555;
+        }
+
+        .cart-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        th {
+            text-align: left;
+            padding: 5px;
+            color: black;
+            background-color: #fcf0e0;
+            font-weight: normal;
+        }
+
+        td {
+            padding: 10px 5px;
+        }
+
+            td input {
+                width: 40px;
+                height: 30px;
+                padding: 5px;
+            }
+
+            td a {
+                color: #d61900;
+                font-size: 12px;
+            }
+
+            td img {
+                width: 80px;
+                height: 80px;
+                margin-right: 10px;
+            }
+
+        .total-price {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+            .total-price table {
+                border-top: 3px solid black;
+                width: 100%;
+                max-width: 350px;
+            }
+
+        td:last-child {
+            text-align: right;
+        }
+
+        th:last-child {
+            text-align: right;
+        }
+
+        .tableSize, .headerSize, .dataSize, .rowSize {
+            margin: auto;
+            text-align: center;
+            font-size: large;
+            font-family: Georgia, serif;
+            border: solid 2px black;
+        }
+    </style>
+
+    <div class="small-container cart-page">
+
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <div class="placeholder"></div>
+                        <div>
+                            <p>Placeholder</p>
+                            <small>Price: ₱276.54</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>₱276.54</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <div class="placeholder"></div>
+                        <div>
+                            <p>Placeholder</p>
+                            <small>Price: ₱276.54</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>₱276.54</td>
+            </tr>
+        </table>
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Total</td>
+                    <td>₱???.??</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

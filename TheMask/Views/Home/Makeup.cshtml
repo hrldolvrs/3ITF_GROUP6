@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<TheMask.Models.Product>
+
+<!DOCTYPE html>
 <html>
 <head>
     <style>
         .header {
-            margin-top:20px;
+            margin-top: 20px;
             font-family: Helvetica;
             display: flex;
             align-items: center;
@@ -18,44 +20,6 @@
             font-weight: bold;
         }
 
-        .filter-sort {
-            display: flex;
-            align-items: center;
-        }
-
-        .checkboxes {
-            display: flex;
-            margin-right: 10px;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-
-        .checkbox {
-            margin-right: 5px;
-        }
-
-        .filter-button {
-            padding: 8px 15px;
-            background-color: #FF7B34;
-            border-color: #FF7B34;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .sort-select {
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
         .row {
             border: 2px solid black;
             padding: 25px;
@@ -67,6 +31,11 @@
 
         .card-title {
             font-size: 30px
+        }
+
+        .card-price {
+            font-size: 20px; 
+            color: #d17724;
         }
 
         .add-to-cart-button {
@@ -85,90 +54,75 @@
             color: white;
         }
 
-
     </style>
 </head>
-    <body style="background-color: #E7DFD8;">
-        <div class="container">
+<body style="background-color: #E7DFD8;">
 
-            <div class="header">
+    @*<table class="table table-dark">
+
+        <tr>
+            <th colspan="5">Student</th>
+        </tr>
+
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Category</td>
+            <td>Product Image</td>
+            <td>Description</td>
+        </tr>
+        @foreach (var Product in Model) 
+        {
+            <tr>
+                <td>@Product.Id</td>
+                <td>@Product.ProductName</td>
+                <td>@Product.ProductCategory</td>
+                <td>@Product.ProductImage</td>
+                <td>@Product.ProductDescription</td>
+            </tr>
+        };
+    </table>*@
+
+    <div class="container">
+        <div class="header">
             <div class="logo" id="HDR" style="font-size: 50px; color:#d17724; font-weight: lighter;">TheMaskMakeup</div>
-                <div class="filter-sort">
-                    <div class="checkboxes">
-                        <label class="checkbox-label">
-                            <input type="checkbox" class="checkbox">
-                            Budget
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" class="checkbox">
-                            Premium
-                        </label>
-                    </div>
-                    <button class="filter-button">Filter</button>
-                    <div class="sort-options">
-                        <label for="sort-select">Sort by:</label>
-                        <select id="sort-select" class="sort-select">
-                            <option value="latest">Latest</option>
-                            <option value="alphabetical">Alphabetical</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <div class="card-container">
-                <div class="container mt-5">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card" style="background-color: #E7DFD8;">
-                                <img src="~/images/EyebrowSet.jpg" class="card-img-top" alt="Product Image">
-                                <div class="card-body">
-                                    <h5 class="card-title" id="HDR" style="font-weight: lighter;">Mask Eyebrow Set</h5>
-                                    <p class="card-text" style="font-weight: bold; text-align: justify;">
-                                        Enhance your natural beauty with our premium eyebrow set tool, designed to effortlessly shape and define your brows. Crafted for precision and ease,
-                                        this versatile tool ensures flawless brows that perfectly complement your makeup look.
-                                    </p>
-                                    <button class="add-to-cart-button">Mask Up</button>
+        <div class="card-container">
+            <div class="container mt-5">
+                <div class="row">
+                    @foreach (var Product in Model)
+                    {
+                        if (Product.ProductCategory.Equals("Makeup"))
+                        {
+                            <div class="col-md-4">
+                                <div class="card" style="background-color: #E7DFD8;">
+                                    <img src="~/images/maskeyebrowset.jpg" class="card-img-top" alt="Product Image">
+                                    @*<img src="~/images/@Product.ProductImage" class="card-img-top" alt="Product Image">*@
+                                    <div class="card-body">
+                                        <h5 class="card-title" id="HDR" style="font-weight: lighter;">@Product.ProductName</h5>
+                                        <h5 class="card-price" id="HDR">$@Product.ProductPrice.00</h5>
+                                        <p class="card-text" style="font-weight: bold; text-align: justify;">
+                                            @Product.ProductDescription
+                                        </p>
+                                        <button class="add-to-cart-button">Mask Up</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card" style="background-color: #E7DFD8;">
-                                <img src="~/images/lipstick.jpg" class="card-img-top" alt="Product Image">
-                                <div class="card-body">
-                                    <h5 class="card-title" id="HDR" style="font-weight: lighter;">Mask Lipstick</h5>
-                                    <p class="card-text" style="font-weight: bold; text-align: justify;">
-                                        Elevate your glamour game with our captivating red lipstick. A timeless classic, this bold shade exudes confidence and allure,
-                                        while our formula ensures a comfortable and vibrant wear that turns heads wherever you go.
-                                    </p>
-                                    <button class="add-to-cart-button">Mask Up</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card" style="background-color: #E7DFD8;">
-                                <img src="~/images/powder.jpg" class="card-img-top" alt="Product Image">
-                                <div class="card-body">
-                                    <h5 class="card-title" id="HDR" style="font-weight: lighter;">Powder Foundation</h5>
-                                    <p class="card-text" style="font-weight: bold; text-align: justify;">
-                                        Unveil a radiant complexion with our luxurious powder foundation. Providing coverage and a seamless finish, effortlessly blur our imperfections
-                                        while letting your skin breathe, leaving you with a flawless and natural-looking glow.
-                                    </p>
-                                    <button class="add-to-cart-button">Mask Up</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        }
+                    }
                 </div>
             </div>
         </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    </div>
     <br />
     <br />
     <br />
-    </body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</body>
 </html>

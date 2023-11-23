@@ -1,17 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using TheMask.Data;
 using TheMask.Models;
 
 namespace TheMask.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        /*private readonly ILogger<HomeController> _logger;*/
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext _dbData;
+
+        public HomeController(AppDbContext dbData)
+        {
+            _dbData = dbData;   
+        }
+
+        /*public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-        }
+        }*/
 
         public IActionResult Index()
         {
@@ -20,31 +28,28 @@ namespace TheMask.Controllers
 
         public IActionResult Makeup()
         {
-            return View();
+            return View(_dbData.Products);
         }
 
         public IActionResult Skincare()
         {
-            return View();
+            return View(_dbData.Products);
         }
         public IActionResult Contact()
         {
+            //when add to database maybe we can auto add the date it was added (if so remove datetime input in Contact.cshtml
             return View();
         }
-        public IActionResult Cart()
+
+        public IActionResult Login()
         {
             return View();
         }
 
-       public IActionResult Login()
-       {
+        public IActionResult Signup()
+        {
             return View();
-       }
-
-       public IActionResult Signup()
-       {
-           return View();
-       }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
