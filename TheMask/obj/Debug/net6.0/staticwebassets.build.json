@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CDFlNzhb3iuW1TMtaeEMgfNLOQ9lpgTzynYt+XIL2Yk=",
+  "Hash": "9JT4prcUKimRWC4ydPh92yNcQlqgCAwlKPmQEMXdy/M=",
   "Source": "TheMask",
   "BasePath": "_content/TheMask",
   "Mode": "Default",
@@ -187,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\images\\maskeyebrowset.jpg"
     },
     {
+      "Identity": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskfoundation.jpg",
+      "SourceId": "TheMask",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\",
+      "BasePath": "_content/TheMask",
+      "RelativePath": "images/maskfoundation.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\maskfoundation.jpg"
+    },
+    {
       "Identity": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\masklipstick.jpg",
       "SourceId": "TheMask",
       "SourceType": "Discovered",
@@ -236,23 +253,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\maskmoisturizer.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskpowderfoundation.jpg",
-      "SourceId": "TheMask",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\",
-      "BasePath": "_content/TheMask",
-      "RelativePath": "images/maskpowderfoundation.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\maskpowderfoundation.jpg"
     },
     {
       "Identity": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskserum.jpg",

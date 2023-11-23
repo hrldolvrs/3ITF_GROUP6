@@ -97,8 +97,7 @@
                         {
                             <div class="col-md-4">
                                 <div class="card" style="background-color: #E7DFD8;">
-                                    <img src="~/images/maskeyebrowset.jpg" class="card-img-top" alt="Product Image">
-                                    @*<img src="~/images/@Product.ProductImage" class="card-img-top" alt="Product Image">*@
+                                    <img src="~/images/@String.Concat(Product.ProductImage, ".jpg")" class="card-img-top" alt="Product Image">
                                     <div class="card-body">
                                         <h5 class="card-title" id="HDR" style="font-weight: lighter;">@Product.ProductName</h5>
                                         <h5 class="card-price" id="HDR">$@Product.ProductPrice.00</h5>

@@ -42,9 +42,9 @@ namespace TheMask.Data
                 new Product()
                 {
                     Id = 3,
-                    ProductName = "Powder Foundation",
+                    ProductName = "Mask Foundation",
                     ProductCategory = "Makeup",
-                    ProductImage = "maskpowderfoundation",
+                    ProductImage = "maskfoundation",
                     ProductPrice = 175,
                     ProductDescription = "Unveil a radiant complexion with our luxurious powder foundation. Providing coverage and a seamless finish, effortlessly blur our imperfections\r\n                                    while letting your skin breathe, leaving you with a flawless and natural-looking glow.",
                 },

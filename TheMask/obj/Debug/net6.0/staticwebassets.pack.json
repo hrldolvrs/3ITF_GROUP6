@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\images\\maskeyebrowset.jpg"
     },
     {
+      "Id": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskfoundation.jpg",
+      "PackagePath": "staticwebassets\\images\\maskfoundation.jpg"
+    },
+    {
       "Id": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\masklipstick.jpg",
       "PackagePath": "staticwebassets\\images\\masklipstick.jpg"
     },
@@ -47,10 +51,6 @@
     {
       "Id": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskmoisturizer.jpg",
       "PackagePath": "staticwebassets\\images\\maskmoisturizer.jpg"
-    },
-    {
-      "Id": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskpowderfoundation.jpg",
-      "PackagePath": "staticwebassets\\images\\maskpowderfoundation.jpg"
     },
     {
       "Id": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\wwwroot\\images\\maskserum.jpg",
