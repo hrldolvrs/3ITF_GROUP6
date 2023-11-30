@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\TheMask.csproj": {}
+    "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\TheMask.csproj": {
+    "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\TheMask.csproj",
+        "projectUniqueName": "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj",
         "projectName": "TheMask",
-        "projectPath": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\TheMask.csproj",
-        "packagesPath": "C:\\Users\\herald\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\herald\\source\\repos\\TheMask\\TheMask\\obj\\",
+        "projectPath": "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj",
+        "packagesPath": "C:\\Users\\Gabrielle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\herald\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gabrielle\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
