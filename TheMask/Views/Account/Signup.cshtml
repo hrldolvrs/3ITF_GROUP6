@@ -1,4 +1,5 @@
-﻿﻿
+﻿@using TheMask.ViewModels;
+@model RegisterViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,20 +57,45 @@
 </head>
 <body style="background-color: #E7DFD8;">
     <div class="login-container">
-        <h2>Embrace The Mask</h2>
+        <h2>Create an Account</h2>
         <br>
-        <form>
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
-            <input type="email" placeholder="E-mail" required>
-            <input type="text" placeholder="Phone Number" required>
+
+
+        <form asp-action="SignUp" asp-controller="Account">
+
+            <div class="form-check">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName">
+            </div>
+                <div class="form-check">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName">
+                </div>
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" placeholder="Enter Username">
+            </div>
+            <div class="form-check">
+                <label asp-for="Email"></label>
+                <input asp-for="Email">
+            </div>
+            <div class="form-check">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone">
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" placeholder="Enter Password">
+            </div>
+            <div class="form-check">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword">
+            </div>
             <div class="button-container">
-                <button class="sign-up-button" type="submit"><b>Sign Up</b></button>
+            <button class="sign-up-button" type="submit"><b>Sign Up</b></button>
             </div>
         </form>
+        </div>
     </div>
     <br />
     <br />

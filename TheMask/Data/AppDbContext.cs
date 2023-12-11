@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TheMask.Models;
 
 namespace TheMask.Data
@@ -6,6 +7,8 @@ namespace TheMask.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
         {

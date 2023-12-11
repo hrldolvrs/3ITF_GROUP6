@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using TheMask.Data;
 using TheMask.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace TheMask.Controllers
 {
@@ -35,20 +36,22 @@ namespace TheMask.Controllers
         {
             return View(_dbData.Products);
         }
+        [HttpGet]
         public IActionResult Contact()
         {
             //when add to database maybe we can auto add the date it was added (if so remove datetime input in Contact.cshtml
             return View();
         }
-
-        public IActionResult Login()
+        [HttpPost]
+        public IActionResult Contact(Contact newcontact)
         {
-            return View();
-        }
-
-        public IActionResult Signup()
-        {
-            return View();
+           
+                if(!ModelState.IsValid) 
+                return View();
+                _dbData.Contacts.Add(newcontact);
+                _dbData.SaveChanges();
+                return View();
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

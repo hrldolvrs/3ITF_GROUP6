@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using TheMask.ViewModels;
+@model UserLoginModel
+
+
+<!DOCTYPE html>
 ﻿
 <head>
     <style>
@@ -63,13 +67,17 @@
     <div class="login-container">
         <h2 id="HDR" style="font-size: 50px; color:#d17724; font-weight: lighter;">Embrace The Mask</h2>
         <br>
-        <form>
-            <input type="text" placeholder="Username" @*required*@>
-            <input type="password" placeholder="Password" @*required*@>
-            <div class="button-container">
-                <button class="login-button"><b>Login</b></button>
-                <button class="sign-up-button" asp-action="Signup"><b>Sign Up</b></button>
-            </div>
+        <form asp-action="UserLogin" asp-controller="Account" method="post">
+
+            <label asp-for="UserName" id="logintext">Username</label>
+            <input asp-for="UserName" type="text" id="username" placeholder="Username">
+
+            <label asp-for="Password" id="logintext">Password</label>
+            <input asp-for="Password" type="text" id="password" placeholder="Password">
+
+            <button class="login-button"><b>Login</b></button>
+            <button class="sign-up-button" asp-action="SignUp"><b>Sign Up</b></button>
+
         </form>
     </div>
 </body>

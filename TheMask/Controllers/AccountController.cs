@@ -1,13 +1,13 @@
-﻿using DyITELEC1C.Data;
-using DyITELEC1C.Models;
-using DyITELEC1C.ViewModels;
+﻿using TheMask.Data;
+using TheMask.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
+using TheMask.ViewModels;
 
-namespace DyITELEC1C.Controllers
+namespace TheMask.Controllers
 {
     public class AccountController : Controller
     {
@@ -27,12 +27,12 @@ namespace DyITELEC1C.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel loginInfo)
+        public async Task<IActionResult> Login(UserLoginModel loginInfo)
         {
             var result = await _signInManager.PasswordSignInAsync(loginInfo.UserName, loginInfo.Password, loginInfo.RememberMe, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Instructor");
+                return RedirectToAction("Index", "Index");
             }
             else
             {
@@ -43,17 +43,19 @@ namespace DyITELEC1C.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Instructor");
+            return RedirectToAction("Index", "Login");
         }
 
+
+
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult SignUp()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel userEnteredData)
+        public async Task<IActionResult> SignUp(RegisterViewModel userEnteredData)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -61,17 +63,20 @@ namespace DyITELEC1C.Controllers
             if (ModelState.IsValid)
             {
                 User newUser = new User();
-                newUser.UserName = userEnteredData.UserName;
                 newUser.Firstname = userEnteredData.FirstName;
                 newUser.Lastname = userEnteredData.LastName;
+                newUser.UserName = userEnteredData.UserName;
                 newUser.PhoneNumber = userEnteredData.Phone;
                 newUser.Email = userEnteredData.Email;
+                newUser.Password = userEnteredData.Password;
+                newUser.ConfirmPassword = userEnteredData.ConfirmPassword;
+
 
                 var result = await _userManager.CreateAsync(newUser, userEnteredData.Password);
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Instructor");
+                    return RedirectToAction("Index", "Login");
                 }
                 else
                 {
