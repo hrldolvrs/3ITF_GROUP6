@@ -4,16 +4,16 @@ namespace TheMask.Data
 {
     public class User : IdentityUser
     {
-        public string? Firstname { get; set; }
-        public string? Lastname { get; set; }
+        public string? CustomerFirstName { get; set; }
+        public string? CustomerLastName { get; set; }
 
-        public string? UserName { get; set; }
+        public string? CustomerUserName { get; set; }
 
-        public string? PhoneNumber { get; set; }
+        public string? CustomerPhoneNumber { get; set; }
 
-        public string? Email { get; set; }
+        public string? CustomerEmail { get; set; }
 
-        public string? Password { get; set; }
+        public string? CustomerPassword { get; set; }
 
         public string? ConfirmPassword { get; set; }
 

@@ -4,6 +4,7 @@ namespace TheMask.Models
 {
     public class CustomerUser
     {
+        [Key]
         public int CustomerId { get; set; }
 
         public string CustomerFirstName { get; set; }
@@ -18,7 +19,7 @@ namespace TheMask.Models
 
         public string CustomerPassword { get; set; }
 
-
+        public string ConfirmPassword { get; set; }
 
     }
 }

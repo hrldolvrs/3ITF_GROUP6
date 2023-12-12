@@ -8,36 +8,39 @@ namespace TheMask.ViewModels
     {
         [Required(ErrorMessage = "First Name is Required")]
         [Display(Name = "First Name")]
-        public string? FirstName { get; set; }
+        public string? CustomerFirstName { get; set; }
 
 
         [Required(ErrorMessage = "Last Name is Required")]
         [Display(Name = "Last Name")]
-        public string? LastName { get; set; }
+        public string? CustomerLastName { get; set; }
 
 
         [Display(Name = "User Name")]
         [Required(ErrorMessage = "Please Enter your Username")]
-        public string? UserName { get; set; }
-
-
-        [Display(Name = "Password")]
-        [Required(ErrorMessage = "Please Enter your Password")]
-        public string? Password { get; set; }
-        [Display(Name = "Confirm Password")]
-        [Required(ErrorMessage = "Must Confirm Password")]
-        public string? ConfirmPassword { get; set; }
+        public string? CustomerUserName { get; set; }
 
 
         [Required(ErrorMessage = "Please enter Email")]
-        [EmailAddress(ErrorMessage = "Input The Correct Email Format")]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
-        public string? Email { get; set; }
+        public string? CustomerEmail { get; set; }
 
 
         [Display(Name = "Phone")]
         [RegularExpression("[0-9]{2}-[0-9]{3}-[0-9]{4}", ErrorMessage = "Follow the " +
         "Format 00-000-0000")]
-        public string? PhoneNumber { get; set; }
+        public string? CustomerPhoneNumber { get; set; }
+
+
+        [Display(Name = "Password")]
+        [Required(ErrorMessage = "Please Enter your Password")]
+        public string? CustomerPassword { get; set; }
+
+        [Compare(nameof(CustomerPassword), ErrorMessage = "Password and confirmation password did not match")]
+        [Display(Name = "Confirm Password")]
+        [Required(ErrorMessage = "Must Confirm Password")]
+        public string? ConfirmPassword { get; set; }
+
     }
 }
