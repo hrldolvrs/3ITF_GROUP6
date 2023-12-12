@@ -4,10 +4,12 @@ using TheMask.Models;
 
 namespace TheMask.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+
+        public DbSet<SignUp> SignUp { get; set; }
 
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 

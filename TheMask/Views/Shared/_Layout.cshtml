@@ -46,9 +46,23 @@
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <a class="login-button" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                </div>
+
+                 @if (User.Identity.IsAuthenticated)
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account"
+                               asp-action="Logout">Logout</a>
+                        </li>
+                        }else
+                        {
+                        <li class="nav-item">
+                            <a class="login-button" asp-area="" asp-controller="Account" asp-action="UserLogin">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                        }
+
             </div>
         </nav>
     </header>

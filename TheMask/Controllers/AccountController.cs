@@ -13,26 +13,51 @@ namespace TheMask.Controllers
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
-        public AccountController(SignInManager<User> signInManager, UserManager<User> userManager)
+        private readonly AppDbContext _dbData;
+        public AccountController(SignInManager<User> signInManager, Microsoft.AspNetCore.Identity.UserManager<User> userManager, AppDbContext dbData)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _dbData = dbData;
         }
 
         //GET: /<controller>/
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult UserLogin()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(UserLoginModel loginInfo)
+        public async Task<IActionResult> UserLogin(UserLoginModel loginInfo)
         {
             var result = await _signInManager.PasswordSignInAsync(loginInfo.UserName, loginInfo.Password, loginInfo.RememberMe, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Index");
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Failed to Login");
+            }
+            return View(loginInfo);
+        }
+
+
+
+        [HttpGet]
+        public IActionResult AdminLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AdminLogin(AdminLoginModel loginInfo)
+        {
+            var result = await _signInManager.PasswordSignInAsync(loginInfo.UserName, loginInfo.Password, loginInfo.RememberMe, false);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -43,48 +68,62 @@ namespace TheMask.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
 
 
-
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult UserRegister()
         {
             return View();
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> SignUp(RegisterViewModel userEnteredData)
+        public async Task<IActionResult> UserRegister(RegisterViewModel userCredentials)
         {
             if (!ModelState.IsValid)
                 return View();
 
-            if (ModelState.IsValid)
+            User newUser = new User();
+
+            newUser.Firstname = userCredentials.FirstName;
+            newUser.Lastname = userCredentials.LastName;
+            newUser.Email = userCredentials.Email;
+            newUser.PhoneNumber = userCredentials.PhoneNumber;
+            newUser.Password = userCredentials.Password;
+
+            var result = await _userManager.CreateAsync(newUser, userCredentials.Password);
+
+            if (result.Succeeded)
             {
-                User newUser = new User();
-                newUser.Firstname = userEnteredData.FirstName;
-                newUser.Lastname = userEnteredData.LastName;
-                newUser.UserName = userEnteredData.UserName;
-                newUser.PhoneNumber = userEnteredData.Phone;
-                newUser.Email = userEnteredData.Email;
-                newUser.Password = userEnteredData.Password;
-                newUser.ConfirmPassword = userEnteredData.ConfirmPassword;
+                CustomerUser newCustomerInfo = new CustomerUser();
+
+                newCustomerInfo.CustomerFirstName = userCredentials.FirstName;
+                newCustomerInfo.CustomerLastName = userCredentials.LastName;
+                newCustomerInfo.CustomerUserName = userCredentials.UserName;
+                newCustomerInfo.CustomerPhoneNumber = userCredentials.PhoneNumber;
+                newCustomerInfo.CustomerEmail = userCredentials.Email;
+                newCustomerInfo.CustomerPassword = userCredentials.Password;
+                _dbData.Add(newCustomerInfo);
+                _dbData.SaveChanges();
 
 
-                var result = await _userManager.CreateAsync(newUser, userEnteredData.Password);
-
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("Index", "Login");
-                }
-                else
-                {
-                    foreach (var error in result.Errors)
-                        ModelState.AddModelError("", error.Description);
-                }
+                result = await _userManager.AddToRoleAsync(newUser, "Customer");
+                return RedirectToAction("UserLogin", "Index");
             }
-            return View(userEnteredData);
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View(userCredentials);
+            }
+
+            return View(userCredentials);
+
+
         }
     }
 }
