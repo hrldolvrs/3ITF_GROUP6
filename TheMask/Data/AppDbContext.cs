@@ -8,8 +8,7 @@ namespace TheMask.Data
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-
-        public DbSet<CustomerUser> CustomerUsers { get; set; }
+        public DbSet<CustomerUser> CustomerUser { get; set; }
 
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 

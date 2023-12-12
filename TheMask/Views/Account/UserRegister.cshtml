@@ -58,38 +58,53 @@
 <body style="background-color: #E7DFD8;">
     <div class="login-container">
         <h2>Create an Account</h2>
+
         <br>
 
 
         <form asp-action="UserRegister" asp-controller="Account">
 
-            <div class="form-check">
-                <label asp-for="CustomerFirstName"></label>
-                <input asp-for="CustomerFirstName">
+            <div class="form-group">
+                <h5><label asp-for="CustomerFirstName"></label></h5>
+                <input asp-for="CustomerFirstName" placeholder="Enter First Name">
+                <span asp-validation-for="CustomerFirstName"></span>
+               <br /><br />
             </div>
-                <div class="form-check">
-                <label asp-for="CustomerLastName"></label>
-                <input asp-for="CustomerLastName">
+                <div class="form-group">
+                <h5><label asp-for="CustomerLastName"></label></h5>
+                <input asp-for="CustomerLastName" placeholder ="Enter Last Name">
+                <span asp-validation-for="CustomerLastName"></span>
+                <br /><br />
                 </div>
             <div class="form-group">
-                <label asp-for="CustomerUserName"></label>
+                <h5><label asp-for="CustomerUserName"></label></h5>
                 <input asp-for="CustomerUserName" placeholder="Enter Username">
-            </div>
-            <div class="form-check">
-                <label asp-for="CustomerEmail"></label>
-                <input asp-for="CustomerEmail">
-            </div>
-            <div class="form-check">
-                <label asp-for="CustomerPhoneNumber"></label>
-                <input asp-for="CustomerPhoneNumber">
+                <span asp-validation-for="CustomerUserName"></span>
+                <br /><br />
             </div>
             <div class="form-group">
-                <label asp-for="CustomerPassword"></label>
-                <input asp-for="CustomerPassword" placeholder="Enter Password">
+                <h5><label asp-for="CustomerEmail"></label></h5>
+                <input asp-for="CustomerEmail" placeholder="Enter Email">
+                <span asp-validation-for="CustomerEmail"></span>
+                <br /><br />
             </div>
-            <div class="form-check">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword">
+            <div class="form-group">
+                <h5><label asp-for="CustomerPhoneNumber"></label></h5>
+                <input asp-for="CustomerPhoneNumber" placeholder="Enter Phone Number">
+                <span asp-validation-for="CustomerPhoneNumber"></span>
+                <br /><br />
+            </div>
+            <div class="form-group">
+                <h5><label asp-for="CustomerPassword"></label></h5>
+                <input asp-for="CustomerPassword" placeholder="Enter Password">
+                <span asp-validation-for="CustomerPassword"></span>
+                <br /><br />
+            </div>
+            <div class="form-group">
+                <h5><label asp-for="ConfirmPassword"></label></h5>
+                <input asp-for="ConfirmPassword" placeholder="Confirm Password">
+                <span asp-validation-for="ConfirmPassword"></span>
+                <br /><br />
             </div>
             <div class="button-container">
             <button class="sign-up-button" type="submit"><b>Sign Up</b></button>

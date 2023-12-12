@@ -13,10 +13,12 @@ namespace TheMask.Controllers
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
+        private readonly AppDbContext _dbData;
         public AccountController(SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _dbData = _dbData;
         }
 
         //GET: /<controller>/
@@ -69,9 +71,12 @@ namespace TheMask.Controllers
                     newUser.CustomerEmail = userEnteredData.CustomerEmail;
                     newUser.CustomerPassword = userEnteredData.CustomerPassword;
                     newUser.ConfirmPassword = userEnteredData.ConfirmPassword;
+
+                    //_dbData.User.Add(newUser);
+                    _dbData.SaveChanges();
                 };
 
-                var result = await _userManager.CreateAsync(newUser, userEnteredData.CustomerPassword);
+                var result = await _userManager.CreateAsync(newUser, "CustomerUser");
 
                 if (result.Succeeded)
                 {
