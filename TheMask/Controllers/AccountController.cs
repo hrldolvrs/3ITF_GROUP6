@@ -80,7 +80,7 @@ namespace TheMask.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> UserRegister(RegisterViewModel userCredentials)
+        public async Task<IActionResult> UserRegister(AdminRegisterModel userCredentials)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -90,7 +90,7 @@ namespace TheMask.Controllers
             newUser.Firstname = userCredentials.FirstName;
             newUser.Lastname = userCredentials.LastName;
             newUser.Email = userCredentials.Email;
-            newUser.PhoneNumber = userCredentials.PhoneNumber;
+            newUser.PhoneNumber = userCredentials.Phone;
             newUser.Password = userCredentials.Password;
 
             var result = await _userManager.CreateAsync(newUser, userCredentials.Password);
@@ -102,7 +102,7 @@ namespace TheMask.Controllers
                 newCustomerInfo.CustomerFirstName = userCredentials.FirstName;
                 newCustomerInfo.CustomerLastName = userCredentials.LastName;
                 newCustomerInfo.CustomerUserName = userCredentials.UserName;
-                newCustomerInfo.CustomerPhoneNumber = userCredentials.PhoneNumber;
+                newCustomerInfo.CustomerPhoneNumber = userCredentials.Phone;
                 newCustomerInfo.CustomerEmail = userCredentials.Email;
                 newCustomerInfo.CustomerPassword = userCredentials.Password;
                 _dbData.Add(newCustomerInfo);

@@ -4,15 +4,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TheMask.ViewModels
 {
-    public class RegisterViewModel
+    public class UserRegisterModel
     {
+
+        [Display(Name = "First Name:")]
         [Required(ErrorMessage = "First Name is Required")]
-        [Display(Name = "First Name")]
         public string? FirstName { get; set; }
 
 
+        [Display(Name = "Last Name:")]
         [Required(ErrorMessage = "Last Name is Required")]
-        [Display(Name = "Last Name")]
         public string? LastName { get; set; }
 
 
@@ -21,23 +22,28 @@ namespace TheMask.ViewModels
         public string? UserName { get; set; }
 
 
-        [Display(Name = "Password")]
+        [Display(Name = "Password:")]
         [Required(ErrorMessage = "Please Enter your Password")]
+        [DataType(DataType.Password)]
         public string? Password { get; set; }
+
         [Display(Name = "Confirm Password")]
-        [Required(ErrorMessage = "Must Confirm Password")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "You must confirm the provided Password.")]
         public string? ConfirmPassword { get; set; }
 
 
+        [Display(Name = "Email")]
         [Required(ErrorMessage = "Please enter Email")]
         [EmailAddress(ErrorMessage = "Input The Correct Email Format")]
-        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string? Email { get; set; }
 
 
         [Display(Name = "Phone")]
-        [RegularExpression("[0-9]{2}-[0-9]{3}-[0-9]{4}", ErrorMessage = "Follow the " +
-        "Format 00-000-0000")]
-        public string? PhoneNumber { get; set; }
+        [Required(ErrorMessage = "Please provide the Scholar's Contact Number.")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression("[0]{1}[9]{1}[0-9]{2}-[0-9]{3}-[0-9]{4}", ErrorMessage = "Please follow this format: 09XX-XXX-XXXX")]
+        public string? Phone { get; set; }
     }
 }

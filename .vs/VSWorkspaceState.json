@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TheMask",
+    "\\TheMask\\Controllers"
   ],
-  "SelectedNode": "\\TheMask.sln",
+  "SelectedNode": "\\TheMask\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

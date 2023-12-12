@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj": {}
+    "C:\\Users\\Dell\\OneDrive\\Desktop\\TheMask\\TheMask\\TheMask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj": {
+    "C:\\Users\\Dell\\OneDrive\\Desktop\\TheMask\\TheMask\\TheMask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\OneDrive\\Desktop\\TheMask\\TheMask\\TheMask.csproj",
         "projectName": "TheMask",
-        "projectPath": "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\TheMask.csproj",
-        "packagesPath": "C:\\Users\\Gabrielle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabrielle\\source\\repos\\3ITF_GROUP6\\TheMask\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\OneDrive\\Desktop\\TheMask\\TheMask\\TheMask.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\OneDrive\\Desktop\\TheMask\\TheMask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Gabrielle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
